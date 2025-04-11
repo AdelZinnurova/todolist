@@ -19,7 +19,6 @@ export type TaskPropsType = {
 }
 
 export const TodoListItem = (props: TodoListItemPropsType) => {
-
     return (
         <div>
             <TodoListTitle title={props.title}/>
