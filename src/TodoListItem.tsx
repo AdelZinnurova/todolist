@@ -7,21 +7,23 @@ import {FiltersValuesType} from "./App.tsx";
 type TodoListItemPropsType = {
     title: string
     tasks: Array<TaskPropsType>
-    deleteTask: (taskId: number) => void
+    deleteTask: (taskId: string) => void
     changeTodolistFilter: (newFilterValue: FiltersValuesType) => void
+    createTask: (title: string) => void
 }
 
 export type TaskPropsType = {
-    id: number
+    id: string
     title: string
     isDone: boolean
 }
 
 export const TodoListItem = (props: TodoListItemPropsType) => {
+
     return (
         <div>
             <TodoListTitle title={props.title}/>
-            <AddTaskForm/>
+            <AddTaskForm createTask={props.createTask}/>
             <TaskList tasks={props.tasks} deleteTask={props.deleteTask}/>
             <FilterButtons changeTodolistFilter={props.changeTodolistFilter}/>
         </div>
