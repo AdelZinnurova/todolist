@@ -16,14 +16,25 @@ function App() {
         {id: v1(), title: 'Typescript', isDone: false},
         {id: v1(), title: 'RTK query', isDone: false},
     ])
+    const [filter, setFilter] = useState<FiltersValuesType>('all')
 
     const deleteTask = (taskId: string) => {
         const nextState: Array<TaskPropsType> = tasks.filter(t => t.id !== taskId) // удаляем таску с помощью метода фильтер
         setTasks(nextState) // обновляем стейт на новые данные
     }
+    const changeTodolistFilter = (newFilterValue: FiltersValuesType) => {
+        setFilter(newFilterValue)
+    }
+    const createTask = (title: string) => {
+        const newTask: TaskPropsType = {id: v1(), title: title, isDone: false}
+        const nextState: TaskPropsType[] = [...tasks, newTask]
+        setTasks(nextState)
+    }
+    const changeTaskStatus = (taskId: string, newStatus: boolean) => {
+        const newTasks = tasks.map(t => t.id === taskId ? {...t, isDone: newStatus} : t)
+        setTasks(newTasks)
+    }
 
-
-    const [filter, setFilter] = useState<FiltersValuesType>('all')
 
     let filteredTasks: Array<TaskPropsType> = [];
     if (filter === 'all') {
@@ -34,24 +45,15 @@ function App() {
         filteredTasks = tasks.filter(t => t.isDone === true)
     }
 
-    const changeTodolistFilter = (newFilterValue: FiltersValuesType) => {
-        setFilter(newFilterValue)
-    }
-
-    const createTask = (title: string) => {
-        const newTask: TaskPropsType = {id: v1(), title: title, isDone: false}
-        const nextState: TaskPropsType[] = [...tasks, newTask]
-        setTasks(nextState)
-    }
-
-
     return (
         <div className="app">
             <TodoListItem title={todoListTitle_1}
                           tasks={filteredTasks}
                           deleteTask={deleteTask}
                           changeTodolistFilter={changeTodolistFilter}
-                          createTask={createTask}/>
+                          createTask={createTask}
+                          changeTaskStatus={changeTaskStatus}
+                          filter={filter}/>
         </div>
     )
 }
