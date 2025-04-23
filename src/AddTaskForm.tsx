@@ -1,8 +1,10 @@
 import {useState, KeyboardEvent, ChangeEvent} from "react";
 
+
 type AddTaskFormPropsType = {
-    createTask: (title: string) => void
+    createTask: (title: string, todolistId: string) => void
     disabled?: boolean
+    todolistId: string
 
 }
 
@@ -11,8 +13,9 @@ export const AddTaskForm = (props: AddTaskFormPropsType) => {
     const [error, setErrors] = useState<string | null>(null);
     const createTaskHandler = () => {
         const trimmedTaskTitle = taskTitle.trim()
-        if(trimmedTaskTitle) {
-            props.createTask(taskTitle)
+        if(trimmedTaskTitle !== '') {
+            props.createTask(trimmedTaskTitle, props.todolistId)
+            setTaskTitle('')
         } else {
             setErrors('Title is required!')
         }

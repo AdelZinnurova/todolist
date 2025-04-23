@@ -25,10 +25,10 @@ export type TaskPropsType = {
 export const TodoListItem = (props: TodoListItemPropsType) => {
     return (
         <div>
-            <TodoListTitle title={props.title}/>
-            <AddTaskForm createTask={props.createTask}/>
-            <TaskList tasks={props.tasks} deleteTask={props.deleteTask} changeTaskStatus={props.changeTaskStatus}/>
-            <FilterButtons filter={props.filter} changeTodolistFilter={props.changeTodolistFilter}/>
+            <TodoListTitle title={props.title} deleteTodolist={props.deleteTodolist} todolistId={props.todolistId}/>
+            <AddTaskForm createTask={props.createTask} todolistId={props.todolistId}/>
+            <TaskList tasks={props.tasks} deleteTask={props.deleteTask} changeTaskStatus={props.changeTaskStatus} todolistId={props.todolistId}/>
+            <FilterButtons filter={props.filter} changeTodolistFilter={props.changeTodolistFilter} todolistId={props.todolistId}/>
         </div>
     );
 };
