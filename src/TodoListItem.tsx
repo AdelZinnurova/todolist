@@ -5,13 +5,15 @@ import {FilterButtons} from "./FilterButtons.tsx";
 import {FiltersValuesType} from "./App.tsx";
 
 type TodoListItemPropsType = {
+    todolistId: string
     title: string
     tasks: Array<TaskPropsType>
     filter: FiltersValuesType
-    deleteTask: (taskId: string) => void
-    changeTodolistFilter: (newFilterValue: FiltersValuesType) => void
-    createTask: (title: string) => void
-    changeTaskStatus: (taskId: string, newStatus: boolean) => void
+    deleteTask: (taskId: string, todolistId: string) => void
+    changeTodolistFilter: (newFilterValue: FiltersValuesType, todolistId: string) => void
+    createTask: (title: string, todolistId: string) => void
+    changeTaskStatus: (taskId: string, newStatus: boolean, todolistId: string) => void
+    deleteTodolist: (todolistId: string) => void
 }
 
 export type TaskPropsType = {

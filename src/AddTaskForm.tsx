@@ -34,7 +34,7 @@ export const AddTaskForm = (props: AddTaskFormPropsType) => {
                 value={taskTitle}
                 onKeyDown={createTaskOnKeyDownHandler}
                 onChange={setTaskTitleHandler}
-            className={!!error ? 'task-input-error' : ''}/>
+                className={!!error ? 'task-input-error' : ''}/>
             <button onClick={createTaskHandler}
                     disabled={isAddBtnDisabled}>
                 +
