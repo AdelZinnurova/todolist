@@ -8,7 +8,7 @@ type FilterButtonsPropsType = {
 
 export const FilterButtons = ({changeTodolistFilter, filter, todolistId}: FilterButtonsPropsType) => {
     return (
-        <div>
+        <div className='btn-wrapper'>
             <button className={filter === 'all' ? 'filter-btn-active' : ''} onClick={() => changeTodolistFilter('all', todolistId)}>All</button>
             <button className={filter === 'active' ? 'filter-btn-active' : ''}  onClick={() => changeTodolistFilter('active', todolistId)}>Active</button>
             <button className={filter === 'completed' ? 'filter-btn-active' : ''}  onClick={() => changeTodolistFilter('completed', todolistId)}>Completed</button>

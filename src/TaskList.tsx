@@ -23,7 +23,7 @@ export const TaskList = ({tasks, deleteTask, changeTaskStatus, todolistId}: Task
                                    checked={t.isDone}
                                    onChange={(e: ChangeEvent<HTMLInputElement>) => changeTaskStatus(t.id, e.currentTarget.checked, todolistId)}/>
                             <span className={t.isDone ? 'task-done' : 'task'}>{t.title}</span>
-                            <button onClick={deletetaskHandler}>X</button>
+                            <button className='btn-delete' onClick={deletetaskHandler}>x</button>
                         </li>
                     )
                 })

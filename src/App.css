@@ -1,27 +1,44 @@
+ul {
+    list-style-type: none;
+}
+
 .app {
     padding: 30px;
     display: flex;
+    gap: 50px;
 }
 
-.app > div {
-    margin-right: 50px;
+.wrapper{
+    background-color: #efed8a;
+    border-radius: 10px;
+    padding: 15px;
 }
+
 
 .task {
     font-weight: bold;
-    color: green;
+    color: purple;
 }
 
 .task-done {
     opacity: 0.5;
-    text-decoration: line-through;
+    color: #065906;
+    font-weight: bold;
+}
+
+.btn-delete{
+    margin-left: 5px;
     color: red;
+}
+
+.btn-wrapper{
+    display: flex;
+    gap: 5px;
 }
 
 .filter-btn-active {
     background-color: lightcoral;
-    color: white;
-    border: 1px solid lightcoral;
+    border: 2px solid lightcoral;
     border-radius: 2px;
 }
 
@@ -30,3 +47,5 @@
     outline: none;
     background-color: lightcoral;
 }
+
+

@@ -10,7 +10,7 @@ export const TodoListTitle = (props: TodoListTitlePropsType) => {
         <>
             <h3>
                 {props.title}
-                <button onClick={() => props.deleteTodolist(props.todolistId)}>X</button>
+                <button className='btn-delete' onClick={() => props.deleteTodolist(props.todolistId)}>x</button>
             </h3>
         </>
     );

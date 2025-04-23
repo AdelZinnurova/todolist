@@ -80,18 +80,20 @@ function App() {
 
 
         return (
-            <TodoListItem
-                key={tl.id}
-                todolistId={tl.id}
-                title={tl.title}
-                filter={tl.filter}
-                tasks={filteredTasks}
-                deleteTask={deleteTask}
-                changeTodolistFilter={changeTodolistFilter}
-                createTask={createTask}
-                changeTaskStatus={changeTaskStatus}
-                deleteTodolist={deleteTodolist}
-            />
+            <div className="wrapper">
+                <TodoListItem
+                    key={tl.id}
+                    todolistId={tl.id}
+                    title={tl.title}
+                    filter={tl.filter}
+                    tasks={filteredTasks}
+                    deleteTask={deleteTask}
+                    changeTodolistFilter={changeTodolistFilter}
+                    createTask={createTask}
+                    changeTaskStatus={changeTaskStatus}
+                    deleteTodolist={deleteTodolist}
+                />
+            </div>
         )
     })
 
