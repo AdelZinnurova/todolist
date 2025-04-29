@@ -6,10 +6,12 @@ ul {
     padding: 30px;
     display: flex;
     gap: 50px;
+    width: 100%;
 }
 
 .wrapper{
-    background-color: #efed8a;
+    /*background-color: rgba(236, 197, 190, 0.16);*/
+    border: 2px solid lightcoral;
     border-radius: 10px;
     padding: 15px;
 }
@@ -21,8 +23,7 @@ ul {
 }
 
 .task-done {
-    opacity: 0.5;
-    color: #065906;
+    color: limegreen;
     font-weight: bold;
 }
 
@@ -40,12 +41,27 @@ ul {
     background-color: lightcoral;
     border: 2px solid lightcoral;
     border-radius: 2px;
+    color: white;
+}
+
+.task-input{
+    background-color: rgba(197, 232, 231, 0.41);
+    border: 2px solid #74dfdc;
+
 }
 
 .task-input-error {
   border: 1px solid red;
     outline: none;
     background-color: lightcoral;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
 }
 
 

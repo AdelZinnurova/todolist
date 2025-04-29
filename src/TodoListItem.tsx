@@ -14,6 +14,8 @@ type TodoListItemPropsType = {
     createTask: (title: string, todolistId: string) => void
     changeTaskStatus: (taskId: string, newStatus: boolean, todolistId: string) => void
     deleteTodolist: (todolistId: string) => void
+    changeTaskTitle: (taskId: string, title: string, todolistId: string) => void
+    changeTodolistTitle: (title: string, todolistId: string) => void
 }
 
 export type TaskPropsType = {
@@ -27,7 +29,7 @@ export const TodoListItem = (props: TodoListItemPropsType) => {
         <div>
             <TodoListTitle title={props.title} deleteTodolist={props.deleteTodolist} todolistId={props.todolistId}/>
             <AddTaskForm createTask={props.createTask} todolistId={props.todolistId}/>
-            <TaskList tasks={props.tasks} deleteTask={props.deleteTask} changeTaskStatus={props.changeTaskStatus} todolistId={props.todolistId}/>
+            <TaskList tasks={props.tasks} deleteTask={props.deleteTask} changeTaskStatus={props.changeTaskStatus} todolistId={props.todolistId} changeTaskTitle={props.changeTaskTitle} changeTodolistTitle={props.changeTodolistTitle}/>
             <FilterButtons filter={props.filter} changeTodolistFilter={props.changeTodolistFilter} todolistId={props.todolistId}/>
         </div>
     );
